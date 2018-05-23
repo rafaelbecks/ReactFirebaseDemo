@@ -1,4 +1,5 @@
-#Dumbledore ReactNative Firebase Demo
+Dumbledore ReactNative Firebase Demo
+====================================
 
 Para iniciar este proyecto en Android, **es necesario tener JDK en la última versión y el SDK de Android instalado y configurado**. Además, debe existir una variable en el PATH referenciando al directorio del sdk llamada **ANDROID_HOME**.
 
