@@ -7,7 +7,7 @@ Puedes seguir las instrucciones para Ubuntu en el siguiente enlace: https://gith
 
 Este proyecto es un fork del starter de firebase para react native (https://github.com/invertase/react-native-firebase-starter), para mayor información de configuración e issues, consultar el repositorio original
 
-##Build de proyecto (Android)
+## Build de proyecto (Android)
 
     npm install
     npm install -g react-native-cli
