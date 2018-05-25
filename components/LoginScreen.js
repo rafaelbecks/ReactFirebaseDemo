@@ -14,6 +14,11 @@ export default class LoginScreen extends React.Component {
       password: '',
       modalVisible: false
     };
+
+    GoogleSignin.configure()
+    .then(() => {
+      console.log('google sign in configured');
+    });
   }
 
   handleSuccessAuth= ()=>
@@ -49,10 +54,10 @@ export default class LoginScreen extends React.Component {
     GoogleSignin.signIn()
       .then((data) => {
         const credential = firebase.auth.GoogleAuthProvider.credential(data.idToken, data.accessToken);
-        return firebase.auth().signInWithCredential(credential);
+        return firebase.auth().signInAndRetrieveDataWithCredential(credential);
       })
       .then((user) => {
-        handleSuccessAuth();
+        this.handleSuccessAuth();
       })
       .catch((error) => {
         const { code, message } = error;
@@ -69,6 +74,9 @@ export default class LoginScreen extends React.Component {
           transparent={false}
           style={styles.modal}
           visible={this.state.modalVisible}
+          onRequestClose={() => {
+            console.log('modal closed.');
+          }}
           >
           <ActivityIndicator size="large" color="#0000ff" />
           </Modal>

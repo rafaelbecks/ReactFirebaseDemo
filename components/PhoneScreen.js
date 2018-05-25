@@ -47,7 +47,9 @@ export default class PhoneScreen extends React.Component {
       secret: this.state.smsCode
    };
 
-    firebase.auth().currentUser.linkWithCredential(credential)
+   console.log(credential);
+
+   firebase.auth.PhoneAuthProvider.credential(credential.token, credential.secret)
         .then((res)=>
       {
         console.log(res);
