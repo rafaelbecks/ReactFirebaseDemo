@@ -29,25 +29,26 @@ export default class LoginScreen extends React.Component {
   }
   
   onRegister = () => {
-    this.modalVisible = true;
-    const { email, password } = this.state;
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((user) => {
-        console.log(user);
-        this.handleSuccessAuth();
-      })
-      .catch((error) => {
-        const { code, message } = error;
+    this.props.navigation.navigate('Scanner')
+    // this.modalVisible = true;
+    // const { email, password } = this.state;
+    // firebase.auth().createUserWithEmailAndPassword(email, password)
+    //   .then((user) => {
+    //     console.log(user);
+    //     this.handleSuccessAuth();
+    //   })
+    //   .catch((error) => {
+    //     const { code, message } = error;
         
-        firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((user) => {
-          this.handleSuccessAuth();
-        })
-        .catch((error) => {
-          const { code, message } = error;
-          console.log(error)
-        });
-      });
+    //     firebase.auth().signInWithEmailAndPassword(email, password)
+    //     .then((user) => {
+    //       this.handleSuccessAuth();
+    //     })
+    //     .catch((error) => {
+    //       const { code, message } = error;
+    //       console.log(error)
+    //     });
+    //   });
   }
 
   onLoginOrRegister = () => {

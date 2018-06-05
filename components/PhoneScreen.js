@@ -52,8 +52,13 @@ export default class PhoneScreen extends React.Component {
    firebase.auth.PhoneAuthProvider.credential(credential.token, credential.secret)
         .then((res)=>
       {
+        this.props.navigation.navigate('QRScanner')
         console.log(res);
       })
+      .catch((error) =>
+      {
+        console.log(error);
+      });
   }
 
   render() {

@@ -147,6 +147,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-camera')
     compile project(':react-native-vector-icons')
     compile(project(':react-native-firebase')) {
         transitive = false
@@ -155,6 +156,9 @@ dependencies {
     implementation(project(':react-native-firebase')) {
         transitive = false
     }
+
+    compile project(':react-native-android-scanner')
+    compile project(':scanlibrary')
 
     // RNFirebase required dependencies
     implementation "com.google.firebase:firebase-core:15.0.2"
@@ -192,3 +196,9 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+configurations.all {
+    resolutionStrategy {
+        force 'com.android.support:support-v4:27.1.0'
+    }
+}

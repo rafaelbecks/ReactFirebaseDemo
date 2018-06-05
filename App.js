@@ -3,11 +3,16 @@ import { createStackNavigator } from 'react-navigation';
 import LoginScreen from './components/LoginScreen';
 import PhoneScreen from './components/PhoneScreen';
 import firebase from 'react-native-firebase';
+import QRScreen from './components/QRScreen';
+import ScannerScreen from './components/ScannerScreen';
+
 
 
 const RootStack = createStackNavigator({
   Login: LoginScreen,
-  Phone: PhoneScreen
+  Phone: PhoneScreen,
+  QRScanner: QRScreen,
+  Scanner: ScannerScreen
 },
   {
     initialRouteName: 'Login',
